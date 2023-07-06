@@ -1,0 +1,13 @@
+.table-container {
+    width: 50%;
+    margin: auto;
+    border: 2px solid #fff;
+    padding: 50px 25px;
+}
+
+.table-container h3 {
+    text-align: center;
+    text-decoration: underline;
+    color: #000;
+    padding-bottom: 25px;
+}
