@@ -33,6 +33,9 @@
     text-align: center;
 }
 .button-box .btn{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
     color: #fff;
     background-color: #00cbfe;
     border: 1px solid #00cbfe;
