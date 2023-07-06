@@ -67,9 +67,6 @@ const myJSON =`{
 
 
 
-
-
-
 let markTable = "<tbody>"
 
 for (let i = 0; i < myObject.result.length; i++) {
