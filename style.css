@@ -28,3 +28,20 @@
     color: #000;
     padding-bottom: 25px;
 }
+
+.button-box {
+    text-align: center;
+}
+.button-box .btn{
+    color: #fff;
+    background-color: #00cbfe;
+    border: 1px solid #00cbfe;
+    border-radius: 10px;
+}
+
+.button-box .btn:hover{
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #00cbfe;
+    border-radius: 10px;
+}
