@@ -1,8 +1,23 @@
+.search-box {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.input-box{
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+    border: 1px solid #00e7ff;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 3px 0px #25d7fb, 0px 0px 0px 0px #00cbfe;
+}
+
 .table-container {
     width: 50%;
     margin: auto;
     border: 2px solid #fff;
-    padding: 50px 25px;
+    padding: 10px 25px;
 }
 
 .table-container h3 {

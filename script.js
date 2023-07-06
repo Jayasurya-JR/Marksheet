@@ -64,6 +64,12 @@ const myJSON =`{
 // document.getElementById("demo").innerHTML = student;
 // console.log(student);
 
+
+
+
+
+
+
 let markTable = "<tbody>"
 
 for (let i = 0; i < myObject.result.length; i++) {
