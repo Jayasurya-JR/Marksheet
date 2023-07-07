@@ -69,3 +69,87 @@
     background-color: #fff;
     border: 1px solid #00cbfe;
 }
+
+@media only screen and (max-width:376px){
+    .table-container{
+        width: 95%;
+        margin: auto;
+        padding: 0;
+    }
+
+    .search-box{
+        width: auto;
+    }
+
+    .button-box .btn{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width:321px){
+    .table-container{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-box{
+        width: auto;
+        margin-left: 30px;
+    }
+    .button-box {
+        margin-left: 35px;
+    }
+    .button-box .btn{
+        width: auto;
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (max-width:426px){
+    .table-container{
+        width: 100%;
+    }
+    .search-box{
+        width: auto;
+    }
+    .button-box .btn{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width:769px){
+    .table-container{
+        width: 100%;
+    }
+    .search-box{
+        width: auto;
+    }
+    .button-box .btn{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width:1025px){
+    .table-container{
+        width: 100%;
+    }
+    .search-box{
+        width: auto;
+    }
+    .button-box .btn{
+        width: auto%;
+    }
+}
+
+@media only screen and (max-width:1441px){
+    .table-container{
+        width: 100%;
+    }
+    .search-box{
+        width: auto;
+    }
+    .button-box .btn{
+        width: auto%;
+    }
+}
