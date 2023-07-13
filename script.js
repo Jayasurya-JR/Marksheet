@@ -50,7 +50,9 @@ const myJSON =`{
   
  const myObject = JSON.parse(myJSON);
 
-let markTable = "<tbody>"
+ let markTable = "<tbody>"
+
+function normalTable() {
 
 for (let i = 0; i < myObject.result.length; i++) {
   markTable +=`<tr>
@@ -62,9 +64,12 @@ for (let i = 0; i < myObject.result.length; i++) {
                </tr>`
 }
 "</tbody>"
-document.getElementById("myTable").innerHTML = markTable;
+  document.getElementById("myTable").innerHTML = markTable;
+}
+normalTable();
 
-function defaultOrder() {
+//function for default button
+function defaultTable(){
   document.getElementById("myTable").innerHTML = markTable;
 }
 
@@ -103,7 +108,7 @@ function descendingOrder(){
   });
 
 let descentTable = "<tbody>"
-for (let i = 0; i < myObject.result.length; i++) {
+for (let i = 0; i < descendArray.length; i++) {
   descentTable +=`<tr>
                    <td>${descendArray[i]["name"]}</td>
                    <td>${descendArray[i]["marks"]["math"]}</td>
