@@ -1,123 +1,98 @@
-const myJSON =`{
-    "result": [
-      {
-        "name": "John",
-        "marks": {
-          "math": "78",
-          "english": "90",
-          "chemistry": "64",
-          "physics": "89"
-        }
-      },
-      {
-        "name": "Mike",
-        "marks": {
-          "math": "67",
-          "english": "86",
-          "chemistry": "59",
-          "physics": "70"
-        }
-      },
-      {
-        "name": "Julia",
-        "marks": {
-          "math": "82",
-          "english": "75",
-          "chemistry": "73",
-          "physics": "84"
-        }
-      },
-      {
-        "name": "Tom",
-        "marks": {
-          "math": "76",
-          "english": "64",
-          "chemistry": "59",
-          "physics": "72"
-        }
-      },
-      {
-        "name": "Barbara",
-        "marks": {
-          "math": "90",
-          "english": "85",
-          "chemistry": "88",
-          "physics": "92"
-        }
+const myJSON = `{
+  "result": [
+    {
+      "name": "John",
+      "marks": {
+        "math": "78",
+        "english": "90",
+        "chemistry": "64",
+        "physics": "89"
       }
-    ]
-  }`;
-  
- const myObject = JSON.parse(myJSON);
-
- let markTable = "<tbody>"
-
-function normalTable() {
-
-for (let i = 0; i < myObject.result.length; i++) {
-  markTable +=`<tr>
-                   <td>${myObject.result[i]["name"]}</td>
-                   <td>${myObject.result[i]["marks"]["math"]}</td>
-                   <td>${myObject.result[i]["marks"]["english"]}</td>
-                   <td>${myObject.result[i]["marks"]["chemistry"]}</td>
-                   <td>${myObject.result[i]["marks"]["physics"]}</td>
-               </tr>`
-}
-"</tbody>"
-  document.getElementById("myTable").innerHTML = markTable;
-}
-normalTable();
-
-//function for default button
-function defaultTable(){
-  document.getElementById("myTable").innerHTML = markTable;
-}
-
-//function to display table in ascending order
-
-function ascendingOrder(){
-
-  const ascendArray = myObject.result.sort((a,b)=>{
-    if(a.name < b.name) {
-      return -1
+    },
+    {
+      "name": "Mike",
+      "marks": {
+        "math": "67",
+        "english": "86",
+        "chemistry": "59",
+        "physics": "70"
+      }
+    },
+    {
+      "name": "Julia",
+      "marks": {
+        "math": "82",
+        "english": "75",
+        "chemistry": "73",
+        "physics": "84"
+      }
+    },
+    {
+      "name": "Tom",
+      "marks": {
+        "math": "76",
+        "english": "64",
+        "chemistry": "59",
+        "physics": "72"
+      }
+    },
+    {
+      "name": "Barbara",
+      "marks": {
+        "math": "90",
+        "english": "85",
+        "chemistry": "88",
+        "physics": "92"
+      }
     }
-  });
+  ]
+}`;
 
-let ascentTable = "<tbody>"
+let tableData = JSON.parse(myJSON).result;
 
-for (let i = 0; i < ascendArray.length; i++) {
-  ascentTable +=`<tr>
-                   <td>${ascendArray[i]["name"]}</td>
-                   <td>${ascendArray[i]["marks"]["math"]}</td>
-                   <td>${ascendArray[i]["marks"]["english"]}</td>
-                   <td>${ascendArray[i]["marks"]["chemistry"]}</td>
-                   <td>${ascendArray[i]["marks"]["physics"]}</td>
-               </tr>`
+function createTable(data) {
+  const tableBody = document.getElementById('tableBody');
+  tableBody.innerHTML = '';
+
+  for (let i = 0; i < data.length; i++) {
+    const row = document.createElement('tr');
+    const nameCell = document.createElement('td');
+    const mathCell = document.createElement('td');
+    const englishCell = document.createElement('td');
+    const chemistryCell = document.createElement('td');
+    const physicsCell = document.createElement('td');
+
+    nameCell.textContent = data[i].name;
+    mathCell.textContent = data[i].marks.math;
+    englishCell.textContent = data[i].marks.english;
+    chemistryCell.textContent = data[i].marks.chemistry;
+    physicsCell.textContent = data[i].marks.physics;
+
+    row.appendChild(nameCell);
+    row.appendChild(mathCell);
+    row.appendChild(englishCell);
+    row.appendChild(chemistryCell);
+    row.appendChild(physicsCell);
+
+    tableBody.appendChild(row);
+  }
 }
-"</tbody>"
-document.getElementById("myTable").innerHTML = ascentTable;
+
+function createAscendingTable() {
+  const sortedData = tableData.sort((a, b) => a.name.localeCompare(b.name));
+  createTable(sortedData);
 }
 
-//function to display table in descending order
-function descendingOrder(){
-
-  const descendArray = myObject.result.sort((a,b)=>{
-    if(a.name > b.name) {
-      return -1
-    }
-  });
-
-let descentTable = "<tbody>"
-for (let i = 0; i < descendArray.length; i++) {
-  descentTable +=`<tr>
-                   <td>${descendArray[i]["name"]}</td>
-                   <td>${descendArray[i]["marks"]["math"]}</td>
-                   <td>${descendArray[i]["marks"]["english"]}</td>
-                   <td>${descendArray[i]["marks"]["chemistry"]}</td>
-                   <td>${descendArray[i]["marks"]["physics"]}</td>
-               </tr>`
+function createDescendingTable() {
+  const sortedData = tableData.sort((a, b) => b.name.localeCompare(a.name));
+  createTable(sortedData);
 }
-"</tbody>"
-document.getElementById("myTable").innerHTML = descentTable;
+
+function searchTable() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const filteredData = tableData.filter(item => item.name.toLowerCase().includes(input));
+  createTable(filteredData);
 }
+
+createTable(tableData);
 
